@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lab6</title>
+<link rel="stylesheet" type="text/css" href="index.css" />
+<style>
+body{
+	font-family:Arial;
+	margin:0;
+	padding:0;
+}
+
+.box{
+	position:relative;
+	background-color:#CCFFFF;
+	width:700px;
+	height:450px;
+}
+
+.btn-group button {
+	position:static;
+	width:33.33%;
+	height:40px;
+	font-size:20px;
+	background-color: red;
+	border: 2px solid black;
+	color: white;
+	padding: 5px 20px;
+	cursor: pointer;
+	float: left;
+}
+
+.btn-group:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.leftbox{
+	position:absolute;
+	left:0;
+	top:40px;
+	bottom:0;
+	background-color: blue;
+	width:50%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.rightbox{
+	position:absolute;
+	top:40px;
+	right:0;
+	bottom:0;
+	background-color: green;
+	width:50%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+img{
+	max-width:100%;
+	height:300px;
+	float:left;
+}
+</style>
+
+<body>
+<center>
+<div class="box">
+<div class="btn-group">
+	<button onclick="Left()">Левая колонка</button>
+	<button onclick="Both()">Обе две</button>
+	<button onclick="Right()">Правая колонка</button>
+
+	<div id="demo1" class="leftbox">
+		<img class="image" src="cat.jpg">
+	</div>
+	<div id="demo2" class="rightbox">
+		<img class="image" src="dog.jpg">
+	</div>
+</div>
+</div>
+
+<script>
+function Left(){
+	document.getElementById("demo1").style.width = "95%";
+	document.getElementById("demo2").style.width = "5%";
+}
+
+function Both(){
+	document.getElementById("demo1").style.width = "50%";
+	document.getElementById("demo2").style.width = "50%";
+}
+
+function Right(){
+	document.getElementById("demo1").style.width = "5%";
+	document.getElementById("demo2").style.width = "95%";
+}
+</script>
+</center>
+</body>
+</html>
